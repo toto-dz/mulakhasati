@@ -1,6 +1,0 @@
-{
-  "openrouter": {
-    "apiKey": "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",
-    "model": "openai/gpt-4.1-mini"
-  }
-}
