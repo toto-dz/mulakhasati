@@ -8,4 +8,4 @@
 //   Project Settings → API → Project URL و anon public key.
 
 export const SUPABASE_URL = 'https://jsunqcyrlnmtwmnerybf.supabase.co';
-export const SUPABASE_ANON_KEY = 'sb_publishable_dju5_iMaQEHcvZhAJZTBlQ_yXamFfis';
+export const SUPABASE_ANON_KEY = 'sb_publishable_6w2iGDMFdXhjRogguxFbMw_Fvqy70p4';
