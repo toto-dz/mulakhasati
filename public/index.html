@@ -1,0 +1,264 @@
+<!-- الرئيسية - ملخصاتي (نسخة موحّدة متجاوبة: كمبيوتر + هاتف) -->
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ملخصاتي | منصة التعليم الذكي</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "on-primary-fixed": "#001849",
+                    "surface-container-highest": "#d3e4fe",
+                    "background": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "outline-variant": "#c3c6d6",
+                    "inverse-on-surface": "#eaf1ff",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "primary-fixed": "#dae1ff",
+                    "on-primary-fixed-variant": "#003fa4",
+                    "surface-container-high": "#dce9ff",
+                    "on-secondary-fixed": "#2c0051",
+                    "inverse-primary": "#b3c5ff",
+                    "surface": "#f8f9ff",
+                    "surface-dim": "#cbdbf5",
+                    "on-background": "#0b1c30",
+                    "tertiary-container": "#026746",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#002113",
+                    "tertiary-fixed": "#a0f4c9",
+                    "tertiary": "#004d33",
+                    "surface-tint": "#1155d0",
+                    "on-secondary-container": "#fffbff",
+                    "surface-variant": "#d3e4fe",
+                    "inverse-surface": "#213145",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#0b1c30",
+                    "secondary-container": "#9c42f5",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#8fe2b8",
+                    "secondary-fixed": "#f0dbff",
+                    "surface-bright": "#f8f9ff",
+                    "outline": "#737685",
+                    "surface-container-low": "#eff4ff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#c1cfff",
+                    "on-surface-variant": "#434654",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#85d7ae",
+                    "primary-container": "#0050cb",
+                    "on-error": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "secondary": "#821dda",
+                    "secondary-fixed-dim": "#dcb8ff",
+                    "on-secondary-fixed-variant": "#6700b5",
+                    "primary": "#003b9a"
+                },
+                borderRadius: { DEFAULT: "0.25rem", lg: "8px", xl: "12px", "2xl": "24px", full: "9999px" },
+                spacing: { xl: "48px", "container-max": "1280px", sm: "16px", md: "24px", xs: "8px", base: "4px", gutter: "24px", "margin-mobile": "16px", lg: "32px" },
+                fontFamily: {
+                    "headline-xl": ["Cairo"], "headline-md": ["Cairo"], "body-lg": ["Cairo"],
+                    "headline-lg": ["Cairo"], "label-md": ["Cairo"], "display-lg": ["Cairo"], "body-md": ["Cairo"], "label-sm": ["Cairo"]
+                },
+                fontSize: {
+                    "headline-xl": ["36px", { lineHeight: "44px", fontWeight: "700" }],
+                    "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                    "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                    "headline-lg": ["28px", { lineHeight: "36px", fontWeight: "600" }],
+                    "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+                    "display-lg": ["48px", { lineHeight: "60px", fontWeight: "700" }],
+                    "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                    "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                    "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    body { font-family: 'Cairo', sans-serif; }
+    .glass-panel { background: rgba(255,255,255,0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    .fade-up { animation: fadeUp .7s ease-out forwards; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
+    #drawer { transition: transform .3s ease; }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-[0_4px_15px_rgba(0,0,0,0.04)] h-16 flex items-center">
+    <div class="container mx-auto px-margin-mobile md:px-gutter flex flex-row-reverse items-center justify-between">
+        <div class="flex items-center gap-md">
+            <span class="font-headline-md text-headline-md font-bold text-primary">ملخصاتي</span>
+        </div>
+
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex flex-row-reverse items-center gap-lg">
+            <a class="font-label-md text-label-md text-primary font-bold transition-colors" href="index.html">الرئيسية</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="summaries.html">الملخصات</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="categories.html">التصنيفات</a>
+        </nav>
+
+        <div class="flex items-center gap-sm">
+            <a href="summaries.html" class="hidden md:inline-flex bg-primary text-on-primary px-lg py-xs rounded-xl font-label-md text-label-md hover:bg-primary-container active:scale-95 transition-all">ابدأ الآن</a>
+            <button id="menuToggle" class="md:hidden material-symbols-outlined p-2 text-on-surface-variant hover:bg-surface-variant/20 rounded-full transition-colors active:scale-95 duration-200">menu</button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Drawer -->
+<aside id="drawer" class="fixed inset-y-0 right-0 w-64 z-[60] bg-surface shadow-2xl translate-x-full md:hidden flex flex-col gap-2 p-4 pt-20">
+    <div class="font-headline-md text-headline-md text-primary mb-4 pr-2">القائمة</div>
+    <nav class="flex flex-col gap-2">
+        <a class="flex flex-row-reverse items-center gap-xs p-md bg-secondary-fixed text-on-secondary-fixed rounded-xl transition-all" href="index.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-label-md text-label-md">الرئيسية</span>
+        </a>
+        <a class="flex flex-row-reverse items-center gap-xs p-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="summaries.html">
+            <span class="material-symbols-outlined">description</span>
+            <span class="font-label-md text-label-md">الملخصات</span>
+        </a>
+        <a class="flex flex-row-reverse items-center gap-xs p-md text-on-surface-variant hover:bg-surface-container-high transition-all" href="categories.html">
+            <span class="material-symbols-outlined">category</span>
+            <span class="font-label-md text-label-md">التصنيفات</span>
+        </a>
+    </nav>
+</aside>
+<div id="drawerOverlay" class="fixed inset-0 bg-black/30 z-[55] hidden md:!hidden"></div>
+
+<main class="pt-16">
+    <!-- Hero Section -->
+    <section class="relative h-[70vh] md:h-[650px] w-full overflow-hidden flex items-end md:items-center left-0 right-0">
+        <!-- Desktop background image -->
+        <div class="hidden md:block absolute inset-0 w-full h-full bg-no-repeat" style="background-image: url('assets/img_hero.jpg'); background-size: 100% 100%;"></div>
+
+        <!-- Mobile background image -->
+        <div class="md:hidden absolute inset-0 w-full h-full bg-no-repeat" style="background-image: url('assets/hero_img_phone.jpg'); background-size: 100% 100%;"></div>
+
+        <div class="container mx-auto px-margin-mobile md:px-gutter relative h-full flex flex-col justify-end md:justify-center items-start pb-xl md:pb-0">
+            <div class="max-w-2xl fade-up">
+                <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-sm leading-tight text-right">
+                    كل ملخص تحتاجه... <br>في مكان واحد.
+                </h1>
+                <p class="hidden md:block font-body-lg text-body-lg text-on-surface-variant mb-xl leading-relaxed text-right">
+                    نحن نوفر لك أفضل الملخصات التعليمية المنسقة والمنقحة من قبل خبراء، لتسهيل رحلتك التعليمية وتحقيق التفوق الذي تطمح إليه. ابدأ دراستك بذكاء اليوم.
+                </p>
+
+                <!-- Glassmorphic Search Bar (desktop, inline in hero) -->
+                <div id="search-section" class="hidden md:flex glass-panel p-base rounded-2xl shadow-xl items-center border border-white/50 group transition-all focus-within:ring-2 focus-within:ring-primary/20">
+                    <button id="hero-search-btn-desktop" type="button" class="bg-primary text-on-primary p-md rounded-xl flex items-center justify-center hover:bg-primary-container transition-colors shrink-0 cursor-pointer">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                    <input id="hero-search-desktop" class="w-full bg-transparent border-none focus:ring-0 px-md text-body-md text-on-surface placeholder:text-outline text-right font-body-md" placeholder="ابحث عن مادة، ملخص، أو درس..." type="text">
+                </div>
+
+                <!-- Mobile CTA button -->
+                <a href="summaries.html" class="md:hidden inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md px-8 py-3 rounded-xl shadow-lg active:scale-95 transition-all">ابدأ الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Search Section (below hero) -->
+    <section id="mobile-search-section" class="md:hidden px-margin-mobile -mt-6 relative z-20">
+        <div class="bg-white p-2 rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.08)] flex items-center">
+            <button id="hero-search-btn-mobile" type="button" class="shrink-0 text-primary px-3 cursor-pointer">
+                <span class="material-symbols-outlined">search</span>
+            </button>
+            <input id="hero-search-mobile" class="w-full border-none focus:ring-0 bg-transparent py-3 text-body-md font-body-md text-on-surface text-right" placeholder="ابحث عن مادة، درس، أو ملخص..." type="text">
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-lg relative z-10 md:-mt-16 mt-lg">
+        <div class="container mx-auto px-margin-mobile md:px-gutter">
+            <div id="stats-container" class="bg-surface-container-lowest rounded-2xl shadow-sm p-md md:p-lg border border-surface-container grid grid-cols-2 md:grid-cols-4 gap-md md:gap-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Subjects Section -->
+    <section class="py-xl">
+        <div class="container mx-auto px-margin-mobile md:px-gutter">
+            <div class="flex flex-row-reverse items-center justify-between mb-lg">
+                <div class="text-right">
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-xs">المواد المميزة</h2>
+                    <p class="font-label-md text-label-md text-on-surface-variant">استكشف مكتبتنا الضخمة من المواد الدراسية لكل المراحل</p>
+                </div>
+                <a class="text-primary font-label-md text-label-md flex items-center gap-xs group shrink-0" href="#">
+                    عرض الكل
+                    <span class="material-symbols-outlined text-base group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                </a>
+            </div>
+
+            <div id="featured-grid" class="grid grid-cols-1 md:grid-cols-4 gap-md md:gap-gutter"></div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-high border-t border-outline-variant/30">
+    <div class="container mx-auto px-margin-mobile md:px-gutter py-xl">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-lg md:gap-xl text-right">
+            <div class="flex flex-col gap-md">
+                <span class="font-headline-md text-headline-md text-primary font-bold">ملخصاتي</span>
+                <p class="font-label-md text-label-md text-on-surface-variant leading-relaxed">
+n                    المنصة العربية الأولى المتخصصة في توفير الملخصات التعليمية بجودة عالية لجميع المراحل الدراسية. هدفنا تمكين الطلاب من النجاح.
+                </p>
+                <div class="flex flex-row-reverse gap-sm">
+                    <span class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors border border-outline-variant/30">
+                        <span class="material-symbols-outlined">language</span>
+                    </span>
+                    <span class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-colors border border-outline-variant/30">
+                        <span class="material-symbols-outlined">share</span>
+                    </span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-sm">
+                <h4 class="font-headline-md text-headline-md text-on-surface mb-xs">روابط سريعة</h4>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="categories.html">التصنيفات</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="summaries.html">الملخصات</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">الرئيسية</a>
+            </div>
+            <div class="flex flex-col gap-sm">
+                <h4 class="font-headline-md text-headline-md text-on-surface mb-xs">المواد التعليمية</h4>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">المرحلة الثانوية</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">المرحلة المتوسطة</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">المرحلة الابتدائية</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">دورات تدريبية</a>
+            </div>
+            <div class="flex flex-col gap-sm">
+                <h4 class="font-headline-md text-headline-md text-on-surface mb-xs">القانونية</h4>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">سياسة الخصوصية</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">شروط الاستخدام</a>
+            </div>
+        </div>
+        <div class="mt-xl pt-lg border-t border-outline-variant/30 flex flex-col items-center gap-md text-center">
+            <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 ملخصاتي. جميع الحقوق محفوظة</p>
+        </div>
+    </div>
+</footer>
+
+<script type="module" src="./js/index.js"></script>
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const drawer = document.getElementById('drawer');
+  const overlay = document.getElementById('drawerOverlay');
+  menuToggle?.addEventListener('click', () => {
+    drawer.classList.toggle('translate-x-full');
+    overlay.classList.toggle('hidden');
+  });
+  overlay?.addEventListener('click', () => {
+    drawer.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+  });
+</script>
+</body>
+</html>
