@@ -1,4 +1,4 @@
-// public/js/auth-guard.js
+// js/auth-guard.js
 // أدوات بسيطة للتحقق من جلسة المشرف على الواجهة الأمامية عبر Supabase Auth.
 
 import { getCurrentUser, signOut } from './auth.js';

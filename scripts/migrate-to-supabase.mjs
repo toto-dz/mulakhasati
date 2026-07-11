@@ -158,7 +158,7 @@ const main = async () => {
   await migrateSummaries();
   await migrateFeatured();
   await migrateSettings();
-  console.log('\n🎉 اكتمل النقل. عدّل public/js/supabase-config.js ثم انشر الموقع.');
+  console.log('\n🎉 اكتمل النقل. عدّل js/supabase-config.js ثم انشر الموقع.');
 };
 
 main().catch((err) => {

@@ -1,4 +1,4 @@
-// public/js/api.js
+// js/api.js
 //
 // طبقة الوصول إلى البيانات عبر Supabase مباشرة من المتصفح.
 // المتصفح (GitHub Pages) ←→ قاعدة بيانات Supabase (Postgres + Storage).

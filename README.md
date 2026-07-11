@@ -15,11 +15,11 @@
 | المجلد/الملف | الوصف |
 |---|---|
 | `public/` | كامل واجهة الموقع (HTML/CSS/JS). يُنشر كما هو. |
-| `public/js/supabase.js` | عميل Supabase (يُحمَّل عبر ESM CDN). |
-| `public/js/supabase-config.js` | `SUPABASE_URL` + `SUPABASE_ANON_KEY` (مفتاح عام). |
-| `public/js/api.js` | طبقة البيانات: قراءة/كتابة الجداول + رفع الملفات لـ Storage. |
-| `public/js/auth.js` + `auth-guard.js` | مصادقة المشرفين عبر Supabase Auth. |
-| `public/services/aiService.js` | ميزات الذكاء الاصطناعي (OpenRouter) + إعداداته في Supabase. |
+| `js/supabase.js` | عميل Supabase (يُحمَّل عبر ESM CDN). |
+| `js/supabase-config.js` | `SUPABASE_URL` + `SUPABASE_ANON_KEY` (مفتاح عام). |
+| `js/api.js` | طبقة البيانات: قراءة/كتابة الجداول + رفع الملفات لـ Storage. |
+| `js/auth.js` + `auth-guard.js` | مصادقة المشرفين عبر Supabase Auth. |
+| `services/aiService.js` | ميزات الذكاء الاصطناعي (OpenRouter) + إعداداته في Supabase. |
 | `sql/schema.sql` | مخطط قاعدة البيانات + الـ Buckets + سياسات RLS. |
 | `scripts/migrate-to-supabase.mjs` | نقل البيانات المحلية القديمة إلى Supabase. |
 
@@ -27,11 +27,11 @@
 
 1. **أنشئ مشروعًا في Supabase** وانسخ `Project URL` و `anon public key`.
 2. **شغّل `sql/schema.sql`** في Supabase → SQL Editor (ينشئ الجداول، الـ Buckets، وسياسات RLS).
-3. **عدّل `public/js/supabase-config.js`** وضع فيه رابط المشروع والمفتاح العام:
+3. **عدّل `js/supabase-config.js`** وضع فيه رابط المشروع والمفتاح العام:
 
    ```js
-   export const SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';
-   export const SUPABASE_ANON_KEY = 'YOUR-ANON-PUBLIC-KEY';
+   export const SUPABASE_URL = 'https://PROJECT_ID.supabase.co';
+   export const SUPABASE_ANON_KEY = 'ANON_PUBLIC_KEY';
    ```
 
 4. **أنشئ مستخدم مشرف** في Supabase → Authentication (Email/Password). سجّل الدخول

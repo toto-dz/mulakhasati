@@ -1,4 +1,4 @@
-// public/services/aiService.js
+// services/aiService.js
 //
 // طبقة خدمات الذكاء الاصطناعي (OpenRouter) + إعداداته المخزّنة في Supabase.
 //

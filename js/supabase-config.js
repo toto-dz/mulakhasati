@@ -1,4 +1,4 @@
-// public/js/supabase-config.js
+// js/supabase-config.js
 //
 // إعدادات اتصال Supabase للواجهة الأمامية.
 // هذه القيم عامة (anon key) وتُنشر في المتصفح لأن الموقع ثابت على GitHub Pages.
@@ -7,5 +7,5 @@
 // استبدل القيم أدناه بمعلومات مشروعك في Supabase:
 //   Project Settings → API → Project URL و anon public key.
 
-export const SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';
-export const SUPABASE_ANON_KEY = 'YOUR-ANON-PUBLIC-KEY';
+export const SUPABASE_URL = 'https://jsunqcyrlnmtwmnerybf.supabase.co';
+export const SUPABASE_ANON_KEY = 'sb_publishable_dju5_iMaQEHcvZhAJZTBlQ_yXamFfis';

@@ -1,4 +1,4 @@
-// public/js/auth.js
+// js/auth.js
 //
 // مصادقة المشرفين عبر Supabase Auth (Email/Password).
 // الجلسة تُدار في المتصفح بواسطة Supabase وتُحمى الصفحات عبر التحقق من المستخدم.
