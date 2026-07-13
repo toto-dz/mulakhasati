@@ -1,0 +1,13 @@
+{
+  "name": "mulakhkhasati",
+  "version": "1.0.0",
+  "description": "منصة ملخصاتي - واجهة أمامية تتصل مباشرة بـ Supabase (بلا خادم)",
+  "type": "module",
+  "scripts": {
+    "migrate": "node scripts/migrate-to-supabase.mjs"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "dotenv": "^16.4.7"
+  }
+}
