@@ -7,5 +7,5 @@
 // استبدل القيم أدناه بمعلومات مشروعك في Supabase:
 //   Project Settings → API → Project URL و anon public key.
 
-export const SUPABASE_URL = 'https://jsunqcyrlnmtwmnerybf.supabase.co';
+export const SUPABASE_URL = 'https://bzefgqgehaeisuivtkdp.supabase.co';
 export const SUPABASE_ANON_KEY = 'sb_publishable_xjp5pwgSDhO4QnQMWvcX8A_yZHyT2D2';
