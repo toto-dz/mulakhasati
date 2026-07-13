@@ -56,28 +56,66 @@ create table if not exists public.settings (
 
 -- ============================ سياسات الأمان (RLS) ============================
 
-alter table public.summaries enable row level security;
-alter table public.featured  enable row level security;
-alter table public.settings  enable row level security;
+do $$
+begin
+  if exists (
+    select 1
+    from pg_class c
+    join pg_namespace n on n.oid = c.relnamespace
+    where n.nspname = 'public'
+      and c.relname = 'summaries'
+      and c.relrowsecurity = false
+  ) then
+    alter table public.summaries enable row level security;
+  end if;
+
+  if exists (
+    select 1
+    from pg_class c
+    join pg_namespace n on n.oid = c.relnamespace
+    where n.nspname = 'public'
+      and c.relname = 'featured'
+      and c.relrowsecurity = false
+  ) then
+    alter table public.featured enable row level security;
+  end if;
+
+  if exists (
+    select 1
+    from pg_class c
+    join pg_namespace n on n.oid = c.relnamespace
+    where n.nspname = 'public'
+      and c.relname = 'settings'
+      and c.relrowsecurity = false
+  ) then
+    alter table public.settings enable row level security;
+  end if;
+end $$;
 
 -- القراءة للجميع (الواجهة العامة)
+drop policy if exists "الملخصات قابلة للقراءة للجميع" on public.summaries;
 create policy "الملخصات قابلة للقراءة للجميع"
   on public.summaries for select using (true);
+
+drop policy if exists "الكروت قابلة للقراءة للجميع" on public.featured;
 create policy "الكروت قابلة للقراءة للجميع"
   on public.featured for select using (true);
 
 -- الكتابة للمستخدمين المصادقين فقط (المشرفون)
+drop policy if exists "كتابة الملخصات للمصادقين" on public.summaries;
 create policy "كتابة الملخصات للمصادقين"
   on public.summaries for all
   using ( auth.role() = 'authenticated' )
   with check ( auth.role() = 'authenticated' );
 
+drop policy if exists "كتابة الكروت للمصادقين" on public.featured;
 create policy "كتابة الكروت للمصادقين"
   on public.featured for all
   using ( auth.role() = 'authenticated' )
   with check ( auth.role() = 'authenticated' );
 
 -- الإعدادات: يراها/يعدّلها صاحبها فقط
+drop policy if exists "إعدادات المستخدم لنفسه" on public.settings;
 create policy "إعدادات المستخدم لنفسه"
   on public.settings for all
   using ( user_id = auth.uid() )
@@ -92,14 +130,17 @@ insert into storage.buckets (id, name, public) values
 on conflict (id) do nothing;
 
 -- القراءة عامة تلقائيًا (لأن الـ buckets عامة)؛ نضيف سياسات الرفع للمصادقين
+drop policy if exists "رفع الملفات للمصادقين" on storage.objects;
 create policy "رفع الملفات للمصادقين"
   on storage.objects for insert to authenticated
   with check ( bucket_id in ('covers', 'pages', 'pdfs') );
 
+drop policy if exists "تعديل الملفات للمصادقين" on storage.objects;
 create policy "تعديل الملفات للمصادقين"
   on storage.objects for update to authenticated
   using ( bucket_id in ('covers', 'pages', 'pdfs') );
 
+drop policy if exists "حذف الملفات للمصادقين" on storage.objects;
 create policy "حذف الملفات للمصادقين"
   on storage.objects for delete to authenticated
   using ( bucket_id in ('covers', 'pages', 'pdfs') );
